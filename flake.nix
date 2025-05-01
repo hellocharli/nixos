@@ -28,7 +28,7 @@
         lanzaboote.nixosModules.lanzaboote
 
         # 2. Configure Lanzaboote and related bootloader settings
-        ({ lib, ... }: {
+        ({ lib, pkgs, ... }: {
           # Enable flakes system-wide
           nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -47,7 +47,7 @@
         })
 
         # 3. Import hardware configuration
-        ./hardware-configuration.nix
+        ./hosts/vm/hardware-configuration.nix
 
         # 4. Import main system configuration
         ./configuration.nix
